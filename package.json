@@ -11,14 +11,12 @@
   "scripts": {
     "build": "tsc",
     "test": "jest ./__tests__/*.test.ts --forceExit",
-    "postinstall": "cd ./node_modules/dmx && npm install && npm run build"
+    "postinstall": "cd ./node_modules/dmx && npm install"
   },
   "peerDependencies": {
     "@iotes/core": "^0.1.34"
   },
-  "dependencies": {
-    "dmx": "https://github.com/stefang/dmx"
-  },
+  "dependencies": {},
   "files": [
     "build/**/*"
   ],

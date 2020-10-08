@@ -2,6 +2,7 @@ import {
   DeviceFactory, DeviceConfig, HostConfig, Iotes, ClientConfig,
 } from '@iotes/core'
 import { DeviceTypes, StrategyConfig } from './types'
+import * as DMX from 'dmx'
 
 export const createDeviceFactory = (
   host: { config: HostConfig<StrategyConfig>; connection: any },
