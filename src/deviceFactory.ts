@@ -19,7 +19,11 @@ export const createDeviceFactory = (
 
     if ((window as any).DMX != null) {
       console.warn('External Node DMX library found')
-      dmx = new (window as any).DMX({ brightsidebinding: true })
+      if (host.config.serialbindings != null) {
+        dmx = new (window as any).DMX({ serialbinding: host.config.serialbindings })
+      } else {
+        dmx = new (window as any).DMX()
+      }
       universe = dmx.addUniverse('dmx', host.config.host, host.config.port)
     } else {
       console.warn('External Node DMX library missing, check the strategy readme')

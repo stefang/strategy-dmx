@@ -2,7 +2,7 @@
   "name": "@iotes/strategy-dmx",
   "version": "0.0.1",
   "description": "A iotes strategy for use with DMX interfaces",
-  "repository": "git://github.com/iotes/dmx-strategy.git",
+  "repository": "git://github.com/stefang/strategy-dmx.git",
   "homepage": "https://iotes.dev",
   "main": "build/index.js",
   "publishConfig": {
@@ -10,12 +10,15 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest ./__tests__/*.test.ts --forceExit"
+    "test": "jest ./__tests__/*.test.ts --forceExit",
+    "postinstall": "cd ./node_modules/dmx && npm install && npm run build"
   },
   "peerDependencies": {
     "@iotes/core": "^0.1.34"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dmx": "https://github.com/stefang/dmx"
+  },
   "files": [
     "build/**/*"
   ],
@@ -33,6 +36,6 @@
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
-  "author": "Triple Geek / Stefan Goodchild",
+  "author": "Stefan Goodchild @ Triple Geek",
   "license": "MIT"
 }
